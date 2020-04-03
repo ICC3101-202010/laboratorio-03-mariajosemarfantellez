@@ -135,7 +135,7 @@ namespace laboratorio03
                         }
                     }
                 }
-                else { }
+                else { Console.WriteLine("Esa persona no existe"); }
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace laboratorio03
 {
     class Cliente
     {
-        protected List<Producto> MisProductos = new List<Producto>();
+        public List<Producto> MisProductos = new List<Producto>();
         Producto z = new Producto("Nombre", "Marca", 0, 0);
         public bool CrearProducto(Producto producto)
         {
@@ -46,20 +47,6 @@ namespace laboratorio03
         List<Boletas> Bole = new List<Boletas>();
         public void ComprarProductos(Producto compra)
         {
-
-            // foreach (Persona l in MisPersonas)
-            //{
-            //  if (l.Rol.ToLower() == "cliente")
-            // {
-            //   Random rnd = new Random();
-            //  PorRol.Add(MisPersonas[rnd.Next()]);
-            // Console.WriteLine(PorRol);
-            // }
-            // else if (l.Rol.ToLower() == "cajero" || l.Rol == "cajera")
-            // {
-            //    //b = random nombre de la cajera o cajero
-            // }
-            // }
 
             foreach (Producto i in MisProductos)
             {
@@ -112,18 +99,24 @@ namespace laboratorio03
         // int b = 0;
         public void VerCompra()
         {
-            //foreach (Persona j in PorRol)
-            //{
-            //  Console.WriteLine("Esta es la compra de ", PorRol[b]);
-            //b++;
+
             foreach (Producto i in Compra)
             {
                 Console.WriteLine(i.InformacionProducto());
-
+                
             }
-            Console.WriteLine("\nLa suma total vendida hoy es de $"+SumaPrecios);
-            //Console.WriteLine("Lo atendio el cajero b");
-            //}
+            Console.WriteLine("\nLa suma total vendida hoy es de: $"+SumaPrecios);
+            DateTime localDate = DateTime.Now;
+            String[] cultureNames = { "en-CH"};
+
+            foreach (var cultureName in cultureNames)
+            {
+                var culture = new CultureInfo(cultureName);
+                Console.WriteLine("La hora registrada es la siguente:");
+                Console.WriteLine("{0}: {1}", cultureName,
+                                  localDate.ToString(culture));
+            }
+
         }
     }
 }
