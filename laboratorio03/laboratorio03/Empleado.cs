@@ -9,7 +9,7 @@ namespace laboratorio03
     class Empleado : Cliente
     {
         public List<Persona> MisPersonas = new List<Persona>();
-        Persona k = new Persona("Nombre", "Apellido", 0, 0, 0, "Nacionalidad", "Genero", "Rol", 0);
+        Persona k = new Persona("Nombre", "Apellido", 0, 0, 0, "Nacionalidad", "Genero", "Rol", 0,"Horario");
         public bool CrearPersonas(Persona persona)
         {
             MisPersonas.Add(k);
@@ -132,11 +132,32 @@ namespace laboratorio03
 
                             }
                             else { }
+                            Console.WriteLine("\nDesea cambiar algún horario de trabajo?\n");
+                            string po = Console.ReadLine();
+                            if (po.ToLower()=="si")
+                            {
+                                Console.WriteLine("\nDiga el rut de quien desea cambiar el horario\n");
+                                string hor = Console.ReadLine();
+                                int Hor = Convert.ToInt32(hor);
+                                foreach (Persona o in MisPersonas)
+                                {
+                                    if (o.RUT == Hor)
+                                    {
+                                        Console.WriteLine("\nDiga el nuevo horario\n");
+                                        string hora = Console.ReadLine();
+                                        o.Horario = hora;
+                                    }
+                                    else { }
+                                }
+                            }
+                            else { }
                         }
+                        else { }
                     }
                 }
                 else { Console.WriteLine("Esa persona no existe"); }
             }
         }
+
     }
 }

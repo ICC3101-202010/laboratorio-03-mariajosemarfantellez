@@ -65,7 +65,9 @@ namespace laboratorio03
                     Console.WriteLine("\nDiga el sueldo de la persona (si es cliente ponga 0)\n ");
                     string II = Console.ReadLine();
                     int ii = Convert.ToInt32(II);
-                    Persona pp1 = new Persona(aa, bb, cc, dd, ee, ff, gg, hh, ii);
+                    Console.WriteLine("\nDiga el horario de trabajo (mañana o tarde)(si es cliente no ponga nada)\n");
+                    string jj = Console.ReadLine();
+                    Persona pp1 = new Persona(aa, bb, cc, dd, ee, ff, gg, hh, ii,jj);
                     todas.CrearPersonas(pp1);
                 }
 
