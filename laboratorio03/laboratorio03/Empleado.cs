@@ -51,7 +51,7 @@ namespace laboratorio03
         string Alegato;
         public void Interaccion()
         {
-            Console.WriteLine("Diga el rut de quien desea controlar\n");
+            Console.WriteLine("Diga el rut de quien desea controlar (de algún jefe o cliente)\n");
             string rutt = Console.ReadLine();
             int Rutt = Convert.ToInt32(rutt);
             foreach (Persona i in MisPersonas)
@@ -75,7 +75,7 @@ namespace laboratorio03
                         {
                             Console.WriteLine("Diga el nombre del producto que busca\n");
                             string n = Console.ReadLine();
-                            foreach (Producto ko in MisProductos)
+                            foreach (Product ko in MisProductos)
                             {
                                 Console.WriteLine("HH");
                                 if (ko.Nombreprod.ToLower() == n.ToLower())

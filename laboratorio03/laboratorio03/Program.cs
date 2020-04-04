@@ -37,7 +37,7 @@ namespace laboratorio03
                     Console.WriteLine("\nDiga el stock del producto\n ");
                     string D = Console.ReadLine();
                     int d = Convert.ToInt32(D);
-                    Producto p1 = new Producto(a, b, c, d);
+                    Product p1 = new Product(a, b, c, d);
                     listado.CrearProducto(p1);
                 }
 
@@ -86,6 +86,7 @@ namespace laboratorio03
                     // Console.WriteLine("\nIngrese el nombre del cliente que desea comprar\n");
                     // string nom = Console.ReadLine();
                     // Persona pp = new Persona(nom);
+
                     while (true)
                     {
                         Console.WriteLine("\nIngrese el nombre del producto que desea comprar\n");
@@ -95,7 +96,7 @@ namespace laboratorio03
                         Console.WriteLine("\nIngrese la cantidad de producto que desea comprar\n");
                         string C = Console.ReadLine();
                         int CC = Convert.ToInt32(C);
-                        Producto p = new Producto(A, B, 0, CC);
+                        Product p = new Product(A, B, 0, CC);
                         listado.ComprarProductos(p);
                         Console.WriteLine("Desea seguir comprando?\n");
                         string opcion = Console.ReadLine();

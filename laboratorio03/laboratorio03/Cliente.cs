@@ -9,13 +9,13 @@ namespace laboratorio03
 {
     class Cliente
     {
-        public List<Producto> MisProductos = new List<Producto>();
-        Producto z = new Producto("Nombre", "Marca", 0, 0);
-        public bool CrearProducto(Producto producto)
+        protected List<Product> MisProductos = new List<Product>();
+        Product z = new Product("Nombre", "Marca", 0, 0);
+        public bool CrearProducto(Product producto)
         {
             MisProductos.Add(z);
             int contador = 0;
-            foreach (Producto i in MisProductos)
+            foreach (Product i in MisProductos)
             {
                 if (i.Nombreprod == producto.Nombreprod && i.Marca == producto.Marca)
                 {
@@ -41,14 +41,15 @@ namespace laboratorio03
                 return false;
             }
         }
-        List<Producto> Compra = new List<Producto>();
+        List<Product> Compra = new List<Product>();
         int SumaPrecios = 0;
        // List<Persona> PorRol = new List<Persona>();
         List<Boletas> Bole = new List<Boletas>();
-        public void ComprarProductos(Producto compra)
+        public void ComprarProductos(Product compra)
         {
 
-            foreach (Producto i in MisProductos)
+
+            foreach (Product i in MisProductos)
             {
 
                 if (i.Nombreprod == compra.Nombreprod)
@@ -70,8 +71,6 @@ namespace laboratorio03
 
                         }
                     }
-                    // else
-                    //{ Console.WriteLine("No existe esa marca de ese producto"); }
 
                 }
                 else if (i.Precio != compra.Precio)
@@ -90,22 +89,20 @@ namespace laboratorio03
         }
         public void VerCarro()
         {
-            foreach (Producto i in MisProductos)
+            foreach (Product i in MisProductos)
             {
                 Console.WriteLine(i.InformacionProducto());
             }
         }
-
-        // int b = 0;
         public void VerCompra()
         {
 
-            foreach (Producto i in Compra)
+            foreach (Product i in Compra)
             {
                 Console.WriteLine(i.InformacionProducto());
                 
             }
-            Console.WriteLine("\nLa suma total vendida hoy es de: $"+SumaPrecios);
+            Console.WriteLine("\nLa suma total vendida hasta ahora es de: $"+SumaPrecios);
             DateTime localDate = DateTime.Now;
             String[] cultureNames = { "en-CH"};
 
@@ -116,7 +113,6 @@ namespace laboratorio03
                 Console.WriteLine("{0}: {1}", cultureName,
                                   localDate.ToString(culture));
             }
-
         }
     }
 }

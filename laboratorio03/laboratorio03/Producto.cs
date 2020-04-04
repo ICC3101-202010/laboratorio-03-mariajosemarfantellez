@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace laboratorio03
 {
-    class Producto
+    class Product
     {
         private string nombreprod;
         private string marca;
@@ -17,7 +17,7 @@ namespace laboratorio03
         public int Precio { get => precio; set => precio = value; }
         public int Stock { get => stock; set => stock = value; }
 
-        public Producto(string Nombreprod, string Marca, int Precio, int Stock)
+        public Product(string Nombreprod, string Marca, int Precio, int Stock)
         {
             this.Nombreprod = Nombreprod;
             this.Marca = Marca;
