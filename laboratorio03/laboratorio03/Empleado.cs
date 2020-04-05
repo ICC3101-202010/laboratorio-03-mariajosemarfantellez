@@ -132,7 +132,6 @@ namespace laboratorio03
                                     }
                                     else { }
                                 }
-
                             }
                             else { }
                             Console.WriteLine("\nDesea cambiar algún horario de trabajo?\n");

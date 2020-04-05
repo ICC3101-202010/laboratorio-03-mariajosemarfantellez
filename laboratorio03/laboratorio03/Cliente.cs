@@ -72,10 +72,6 @@ namespace laboratorio03
                     }
 
                 }
-                else if (i.Precio != compra.Precio)
-                { }
-                else if (i.Stock == compra.Stock || i.Stock != compra.Stock)
-                { }
                 else if (i.Nombreprod != compra.Nombreprod)
                 {
                         Console.WriteLine("\nEse producto no se encuentra disponible\n");
@@ -84,6 +80,10 @@ namespace laboratorio03
                 {
                     Console.WriteLine("\nEsa marca no existe para ese producto\n");
                 }
+                else if (i.Precio != compra.Precio)
+                { }
+                else if (i.Stock == compra.Stock || i.Stock != compra.Stock)
+                { }
                 else { }
             }
 
@@ -98,7 +98,6 @@ namespace laboratorio03
         }
         public void VerCompra()
         {
-
             foreach (Product i in Compra)
             {
                 Console.WriteLine(i.InformacionProducto());

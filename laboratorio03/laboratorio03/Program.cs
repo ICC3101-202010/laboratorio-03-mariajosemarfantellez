@@ -11,7 +11,6 @@ namespace laboratorio03
         static void Main(string[] args)
         {
             Cliente listado = new Cliente();
-           // Cliente lista = new Cliente();
             Empleado todas = new Empleado();
             Console.WriteLine("Hola, Bienvenido al Supermercado\n");
             while (true)

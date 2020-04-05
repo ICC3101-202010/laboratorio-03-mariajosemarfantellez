@@ -25,10 +25,7 @@ namespace laboratorio03
             this.Stock = Stock;
         }
 
-
-
         List<Cliente> AgregarAlCarro = new List<Cliente>();
-
 
         public string InformacionProducto()
         {

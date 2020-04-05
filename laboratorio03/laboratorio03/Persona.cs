@@ -43,7 +43,6 @@ namespace laboratorio03
             this.Sueldo = Sueldo;
             this.Horario = Horario;
         }
-
         public string InformacionPersonas()
         {
             return ("Nombre: " + Nombre + ", " + "Apellido: " + Apellido + ", " + "Rut: " + RUT + ", " + "Edad: " + Edad + ", " + "Fecha de Nacimiento: " + FechaNacimiento + ", " + "Nacionalidad: " + Nacionalidad + ", " + "Genero: " + Genero + ", " + "Rol: " + Rol + ", " + "Sueldo: $" + Sueldo + ", " + "Horario de trabajo: "+Horario );
