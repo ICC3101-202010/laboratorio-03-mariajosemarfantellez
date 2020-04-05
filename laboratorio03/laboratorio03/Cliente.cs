@@ -11,6 +11,7 @@ namespace laboratorio03
     {
         protected List<Product> MisProductos = new List<Product>();
         Product z = new Product("Nombre", "Marca", 0, 0);
+
         public bool CrearProducto(Product producto)
         {
             MisProductos.Add(z);
@@ -43,12 +44,10 @@ namespace laboratorio03
         }
         List<Product> Compra = new List<Product>();
         int SumaPrecios = 0;
-       // List<Persona> PorRol = new List<Persona>();
+        //List<Persona> PorRol = new List<Persona>();
         List<Boletas> Bole = new List<Boletas>();
         public void ComprarProductos(Product compra)
         {
-
-
             foreach (Product i in MisProductos)
             {
 
@@ -77,12 +76,15 @@ namespace laboratorio03
                 { }
                 else if (i.Stock == compra.Stock || i.Stock != compra.Stock)
                 { }
-                else
+                else if (i.Nombreprod != compra.Nombreprod)
                 {
-
-                    Console.WriteLine("\nEse producto no se encuentra disponible\n");
+                        Console.WriteLine("\nEse producto no se encuentra disponible\n");
                 }
-
+                else if (i.Marca != compra.Marca)
+                {
+                    Console.WriteLine("\nEsa marca no existe para ese producto\n");
+                }
+                else { }
             }
 
 
@@ -100,7 +102,7 @@ namespace laboratorio03
             foreach (Product i in Compra)
             {
                 Console.WriteLine(i.InformacionProducto());
-                
+
             }
             Console.WriteLine("\nLa suma total vendida hasta ahora es de: $"+SumaPrecios);
             DateTime localDate = DateTime.Now;

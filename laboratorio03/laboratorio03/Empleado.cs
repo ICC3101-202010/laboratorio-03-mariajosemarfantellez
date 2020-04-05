@@ -8,8 +8,11 @@ namespace laboratorio03
 {
     class Empleado : Cliente
     {
-        public List<Persona> MisPersonas = new List<Persona>();
-        Persona k = new Persona("Nombre", "Apellido", 0, 0, 0, "Nacionalidad", "Genero", "Rol", 0,"Horario");
+        public List<Persona> MisPersonas = new List<Persona> ();
+        Persona k = new Persona("Nombre", "Apellido", 0, 0, 0, "Nacionalidad", "Genero", "Rol", 0, "Horario");
+
+        List<string> lista = new List<string>();
+        List<string> cajeros = new List<string>();
         public bool CrearPersonas(Persona persona)
         {
             MisPersonas.Add(k);
@@ -134,7 +137,7 @@ namespace laboratorio03
                             else { }
                             Console.WriteLine("\nDesea cambiar algún horario de trabajo?\n");
                             string po = Console.ReadLine();
-                            if (po.ToLower()=="si")
+                            if (po.ToLower() == "si")
                             {
                                 Console.WriteLine("\nDiga el rut de quien desea cambiar el horario\n");
                                 string hor = Console.ReadLine();
@@ -157,6 +160,37 @@ namespace laboratorio03
                 }
                 else { Console.WriteLine("Esa persona no existe"); }
             }
+        }
+        public void NomBol()
+        {
+            int es = 0;
+        foreach (Persona p in MisPersonas)
+            {
+                if (p.Rol.ToLower() == "cliente")
+                {
+                    lista.Add(p.Nombre);
+                    es++;
+                }
+                else { }
+            }
+            Random rnd = new Random();
+            int num = rnd.Next(0, es);
+            Console.WriteLine(lista[num]);
+        }
+        public void NomPol()
+        {
+            int esa = 0;
+            foreach (Persona q in MisPersonas)
+            {
+                if (q.Rol.ToLower() == "cajera" || q.Rol.ToLower() == "cajero")
+                {
+                    cajeros.Add(q.Nombre);
+                }
+                else { }
+            }
+            Random rnds = new Random();
+            int nume = rnds.Next(0, esa);
+            Console.WriteLine(cajeros[nume]);
         }
 
     }

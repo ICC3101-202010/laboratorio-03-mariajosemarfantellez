@@ -11,7 +11,7 @@ namespace laboratorio03
         static void Main(string[] args)
         {
             Cliente listado = new Cliente();
-            Cliente lista = new Cliente();
+           // Cliente lista = new Cliente();
             Empleado todas = new Empleado();
             Console.WriteLine("Hola, Bienvenido al Supermercado\n");
             while (true)
@@ -47,7 +47,7 @@ namespace laboratorio03
                     string aa = Console.ReadLine();
                     Console.WriteLine("\nDiga el apellido de la persona\n ");
                     string bb = Console.ReadLine();
-                    Console.WriteLine("\nDiga el rut de la persona (sin puntos ni guion)\n ");
+                    Console.WriteLine("\nDiga el rut de la persona (Muy importante) (sin puntos ni guion)\n ");
                     string CC = Console.ReadLine();
                     int cc = Convert.ToInt32(CC);
                     Console.WriteLine("\nDiga la edad de la persona\n ");
@@ -85,10 +85,10 @@ namespace laboratorio03
 
                 else if (respuesta.ToLower() == "e")
                 {
-                    // Console.WriteLine("\nIngrese el nombre del cliente que desea comprar\n");
-                    // string nom = Console.ReadLine();
-                    // Persona pp = new Persona(nom);
-
+                    Console.WriteLine("\nEl cliente que esta haciendo esta compra es: ");
+                    todas.NomBol();
+                    Console.WriteLine("\nEl cajero que lo está atendiendo es: ");
+                    todas.NomPol();
                     while (true)
                     {
                         Console.WriteLine("\nIngrese el nombre del producto que desea comprar\n");
